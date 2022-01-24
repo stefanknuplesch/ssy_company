@@ -1,0 +1,29 @@
+  <div class="table-wrapper">
+    <div class="table-title">
+      <h3>Employees from Department <b>{{deptId}}</b></h3>
+    </div>
+    <table class="table table-bordered">
+      <thead>
+      <tr>
+        <th>ID</th>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Actions</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let e of employees">
+        <td>{{ e.id }}</td>
+        <td>{{ e.firstName }}</td>
+        <td>{{ e.lastName }}</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><input [(ngModel)]="newEmp.id"/></td>
+        <td><input [(ngModel)]="newEmp.firstName"/></td>
+        <td><input [(ngModel)]="newEmp.lastName"/></td>
+        <td><button class="btn btn-success" (click)="addEmployee()">Add Employee</button></td>
+      </tr>
+      </tbody>
+    </table>
+  </div>

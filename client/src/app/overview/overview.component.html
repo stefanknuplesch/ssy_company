@@ -1,0 +1,25 @@
+<div class="container-lg">
+  <div class="table-wrapper">
+    <div class="table-title">
+      <h2>Overview:</h2>
+    </div>
+    <table class="table table-striped">
+      <thead>
+      <tr>
+        <th>Department</th>
+        <th>Active Employees</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let d of departments">
+        <td>{{ d.name }}</td>
+        <td>
+          <ul>
+            <li *ngFor="let e of d.employees">{{ e.name }}</li>
+          </ul>
+        </td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

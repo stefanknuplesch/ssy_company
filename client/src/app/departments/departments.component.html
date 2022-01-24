@@ -1,0 +1,37 @@
+<div class="container-lg">
+    <div class="table-wrapper">
+      <div class="table-title">
+        <h2>Departments:</h2>
+      </div>
+      <table class="table table-bordered">
+        <thead>
+        <tr>
+          <th>ID</th>
+          <th>Department</th>
+          <th>Actions</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let d of departments">
+          <td>{{ d.id }}</td>
+          <td>{{ d.name }}</td>
+          <td>
+            <button class="btn btn-primary" (click)="setSelected(d.id)" [disabled]="selectedDeptId === d.id">Show Employees</button>
+          </td>
+        </tr>
+        <tr>
+          <td><input [(ngModel)]="newDept.id"/></td>
+          <td><input [(ngModel)]="newDept.name"/></td>
+          <td><button class="btn btn-success" (click)="addDepartment()">Add Department</button></td>
+        </tr>
+        </tbody>
+      </table>
+      <button class="btn btn-primary" (click)="unsetSelected()" [disabled]="selectedDeptId === undefined">Hide Employees</button>
+    </div>
+  <br>
+  <br>
+  <br>
+    <div *ngIf="selectedDeptId !== undefined">
+      <app-employees [deptId]="selectedDeptId"></app-employees>
+    </div>
+</div>
