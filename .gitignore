@@ -117,3 +117,8 @@ dist
 .pnp.*
 
 /.idea/
+/activation/
+/departments/
+/employees/
+/event-bus/
+/query/
